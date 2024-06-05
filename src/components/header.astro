@@ -1,0 +1,18 @@
+---
+import type { Props } from "@astrojs/starlight/props";
+import Search from "@astrojs/starlight/components/Search.astro";
+import ThemeSelect from "@astrojs/starlight/components/ThemeSelect.astro";
+---
+
+<div id="myHeader">
+  <div class="prod">
+    <a href="https://climoscope.uk/BfmLH/" class="home"> Climoscope β </a>
+  </div>
+  <div class="fill"></div>
+  <div>
+    <Search {...Astro.props} />
+  </div>
+  <div>
+    <ThemeSelect {...Astro.props} />
+  </div>
+</div>
