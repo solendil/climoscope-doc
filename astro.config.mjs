@@ -26,12 +26,21 @@ export default defineConfig({
 			},		
 			tableOfContents: false,
 			sidebar: [
-				{ label: "Homepage", link:'/home/'},
+				{
+					label: 'About',
+					items: [
+						{ label: "Homepage", link:'/home/'},
+						{ label: "Contact", link:'/contact/'},
+						{ label: "Legal", link:'/legal/'},
+					]
+				},
 				{
 					label: 'Documentation',
-					autogenerate: { directory: 'doc' },
+					items: [
+						{ label: "Help", link:'/doc/help/'},
+						{ label: "Shortcuts", link:'/doc/shortcuts/'},
+					],
 				},
-				{ label: "Legal", link:'/legal/'},
 			],
 		}),
 	],
