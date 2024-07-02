@@ -21,7 +21,39 @@ converted back and forth to a **user tag** (more detailed information, visible a
 On the following picture, Brest and Nantes are **city tags**, Paris is a **user tag** converted from a **city tag**, the tag for Asterix' village
 is a **user tag**, and the tag near the mouse pointer is the **mouse tag**.
 
-<img src="/src/assets/tags.png" />
+![Example of tags](../../../assets/tags.png)
+
+### Tag text
+
+Tags use symbols for brevity:
+
+- `v` : the current value
+- `μ` : the value of the [mean](https://en.wikipedia.org/wiki/Mean)
+- `σ` : the value of the [standard deviation](https://en.wikipedia.org/wiki/Standard_deviation)
+
+Examples:
+
+<table>
+<tr>
+<td>
+Comparison of temperatures of a year to a period
+```
++ 3.3 °C
+v:12.4° μ:9.1°
+```
+The temperature this year was +3.3°C above period average, the temperature is 12.4°C and the average is 9.1°C.
+</td>
+<td>
+Comparison (σ) of rainy days of a month to a period
+```
+- 2.7 σ
+v:10.0 μ:3.5 σ:2.4
+```
+The number of rainy days this month was 2.7σ above the average (which is a [rare event](https://en.wikipedia.org/wiki/Standard_deviation#Chebyshev's_inequality)), 
+It rained 10 days, while the average for this month is 3.5, the standard deviation is 2.4 days. In this case, 2.7 = (μ-v)/σ
+</td>
+
+</tr></table>
 
 ## What is ERA5 reanalysis
 
