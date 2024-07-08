@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import partytown from '@astrojs/partytown';
 
 // https://astro.build/config
 export default defineConfig({
@@ -9,9 +10,10 @@ export default defineConfig({
 	build :{
 		format: "file",
 	},
-	base: "/BfmLH/doc",
+	base: "/doc",
 	output: "static",
 	integrations: [
+		partytown(),
 		starlight({
 			favicon: "./src/assets/favicon.png",
 			title: 'Climoscope β',
@@ -22,7 +24,7 @@ export default defineConfig({
         './src/styles/custom.css',
       ],
 			components: {
-				Header: './src/components/header.astro',
+				Header: './src/components/header.astro'
 			},		
 			tableOfContents: false,
 			sidebar: [
@@ -38,7 +40,8 @@ export default defineConfig({
 					label: 'Documentation',
 					items: [
 						{ label: "Help", link:'/doc/help/'},
-						{ label: "Shortcuts", link:'/doc/shortcuts/'},
+						{ label: "Tags", link:'/doc/tags/'},
+						{ label: "Keyboard shortcuts", link:'/doc/shortcuts/'},
 					],
 				},
 			],

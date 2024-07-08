@@ -5,8 +5,22 @@ import ThemeSelect from "@astrojs/starlight/components/ThemeSelect.astro";
 ---
 
 <div id="myHeader">
+  <!-- Google Analytics (gtag.js) -->
+  <script
+    type="text/partytown"
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-T69209M3QV"></script>
+  <script type="text/partytown">
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "G-T69209M3QV");
+  </script>
+
   <div class="prod">
-    <a href="https://climoscope.uk/BfmLH/" class="home"> Climoscope β </a>
+    <a href="/" class="home"> Climoscope </a>
   </div>
   <div class="fill"></div>
   <div>
