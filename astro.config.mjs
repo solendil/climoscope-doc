@@ -16,7 +16,7 @@ export default defineConfig({
 		partytown(),
 		starlight({
 			favicon: "./src/assets/favicon.png",
-			title: 'Climoscope β',
+			title: 'Climoscope',
 			logo: {
         src: './src/assets/favicon.png',
       },
@@ -29,19 +29,25 @@ export default defineConfig({
 			tableOfContents: false,
 			sidebar: [
 				{
-					label: 'About',
-					items: [
-						{ label: "Homepage", link:'/home/'},
-						{ label: "Contact", link:'/contact/'},
-						{ label: "Legal", link:'/legal/'},
-					]
+					label: 'Welcome!',
+					link: '/home/',
 				},
 				{
 					label: 'Documentation',
 					items: [
-						{ label: "Help", link:'/doc/help/'},
+						{ label: "Index", link:'/doc/help/'},
+						{ label: "Data", link:'/doc/data/'},
+						{ label: "Climate", link:'/doc/climate/'},
+						{ label: "Weather", link:'/doc/weather/'},
 						{ label: "Tags", link:'/doc/tags/'},
-						{ label: "Keyboard shortcuts", link:'/doc/shortcuts/'},
+						{ label: "Keyboard", link:'/doc/shortcuts/'},
+					],
+				},
+				{
+					label: 'Boring',
+					items: [
+						{ label: "Contact", link:'/contact/'},
+						{ label: "Legal", link:'/legal/'},
 					],
 				},
 			],

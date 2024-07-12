@@ -2,7 +2,17 @@
 title: Tags
 ---
 
+import { Aside } from "@astrojs/starlight/components";
+
 # 🏷️ Tags
+
+<Aside type="caution" title="Note">
+  The value of tags may differ from values recorded by local stations. This is
+  because Climoscope uses a grid with a precision of around 32km. Local
+  conditions such as [urban heat island
+  (UHI)](https://en.wikipedia.org/wiki/Urban_heat_island), valleys, or small
+  islands may not be properly recorded.
+</Aside>
 
 A Tag is a label on the map that displays information at a location. There are three types of tags:
 
@@ -10,10 +20,6 @@ A Tag is a label on the map that displays information at a location. There are t
 - **City tags** display simple information for major cities. Cities appear and disappear according to the map zoom level. You
   can choose the density of displayed cities in the preferences.
 - **User tags** display full information at chosen location, they are displayed on a darker background
-
-> **Note**: The value of a tag may differ from values recorded by local stations. This is because Climoscope uses a grid with a precision
-> of around 32km. Very local conditions such as [urban heat island (UHI)](https://en.wikipedia.org/wiki/Urban_heat_island), valleys, or small
-> islands may not be properly recorded.
 
 To set a user tag, simply **click on the map**. To remove it, simply **click on it**. By clicking on a city tag, it can be
 converted back and forth to a user tag (more detailed information, visible at any zoom level).
@@ -27,7 +33,7 @@ is a user tag, and the tag near the mouse pointer (not visible, duh!) is the mou
 
 Tags use symbols for brevity:
 
-- `v` : the current value
+- `Δ` : a delta, or difference between two values
 - `μ` : the value of the [mean](https://en.wikipedia.org/wiki/Mean)
 - `σ` : the value of the [standard deviation](https://en.wikipedia.org/wiki/Standard_deviation)
 
@@ -37,20 +43,20 @@ Examples:
 <tr>
 <td>
 Comparison of temperatures of a year to a period
-```
-+ 3.3 °C
-v:12.4° μ:9.1°
-```
-The temperature this year was +3.3°C above period average, the temperature is 12.4°C and the average is 9.1°C.
+> Δ +2.7 °C  
+> 11.5° ●︎ μ 8.8°
+
+The temperature this year was +2.7°C above period average, the temperature is 11.5°C and the average is 8.8°C.
+
 </td>
 <td>
 Comparison (σ) of rainy days of a month to a period
-```
-- 2.7 σ
-v:10.0 μ:3.5 σ:2.4
-```
-The number of rainy days this month was 2.7σ above the average (which is a [rare event](https://en.wikipedia.org/wiki/Standard_deviation#Chebyshev's_inequality)), 
+> +2.7 σ  
+> 10.0 ●︎ μ 3.5 ●︎ σ 2.4
+
+The number of rainy days this month was 2.7σ above the average (which is a [rare event](https://en.wikipedia.org/wiki/Standard_deviation#Chebyshev's_inequality)),
 It rained 10 days, while the average for this month is 3.5, the standard deviation is 2.4 days. In this case, 2.7 = (μ-v)/σ
+
 </td>
 
 </tr></table>

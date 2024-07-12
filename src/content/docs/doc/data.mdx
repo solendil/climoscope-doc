@@ -1,0 +1,41 @@
+---
+title: Data
+---
+
+# 💾 Data sources
+
+> You can find the data source used by a Climoscope map at the bottom-right of the screen.
+
+## 🌡️ ERA5
+
+[Copernicus/ECMWF ERA5](https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-single-levels?tab=overview) is a Climate
+Reanalysis from 1940 to today. You can find more information on reanalysis on [Wikipedia](https://en.wikipedia.org/wiki/Atmospheric_reanalysis)
+or [Copernicus](https://climate.copernicus.eu/climate-reanalysis), but to put it quickly:
+
+Accurate weather data (notably temperatures, but also wind, precipitations, etc...) has been collected for more than 200 years, first by
+individuals, then by armies and ships, then by national meteorological services. Today, we have 100s of thousands of measurements
+of the atmosphere every day, but one century ago, the data, though accurate, was much sparser.
+
+A reanalysis infers past data points we don't have. To do this, the reanalysis uses the same atmospheric model we use today for weather
+forecast and feeds it with past data over multiple day so the model finds the best atmospheric state fitting available data. Reanalysis
+don't invent stuff, they just fill in the blanks.
+
+ERA5 data is made available around 5 days after real-time, then a consolidated version is updated 2 to 3 monhs after real-time. Climoscope
+fetches ERA5 data daily for D-7 and D-100.
+
+## ☁️ GFS
+
+The [Global Forecast Sytem](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) is the U.S. weather forecast model.
+It might be a little less good than the european ECMWF model, but it is free, so you will find it used by a lot of services online, including
+Climoscope.
+
+The GFS is computed four times a day. Climoscope fetches it four times a day also, around one hour after availability.
+
+GFS "forecast" are also used for the past week on Climoscope, until ERA5 data becomes available. This is not a problem, because the latest
+forecast is issued around 6hours before real-time and is usually extremely accurate.
+
+## 📏 Geographic precision
+
+Both of these models are used in their version with a lat-lon grid of 0.25 degrees. It means that the distance between two measurement points
+might be up to 32km. Local conditions such as [urban heat island (UHI)](https://en.wikipedia.org/wiki/Urban_heat_island), valleys, or small
+islands may not appear on Climoscope.
